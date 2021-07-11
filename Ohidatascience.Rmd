@@ -1,0 +1,44 @@
+---
+title: "Ohidatascience"
+author: "Lulus"
+date: "7/11/2021"
+output: html_document
+---
+
+
+
+*Here I am writing in italics..*
+
+**Don't worry! This will appear in bold**
+
+# And this will be our first header.. 
+## Our second
+### And our THIRD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
