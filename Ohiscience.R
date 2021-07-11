@@ -119,20 +119,33 @@ ggplot(data=acadia, aes(x=year, y=visitors))+
 
 
 
+ggplot(data=visit_16, aes(x=state))+
+  geom_bar()
+
+
+my_plot<-ggplot(data=mass)+
+  geom_bar(aes(x=type, fill=park_name))+
+  labs(x="",y="")+
+  theme(axis.text.x = element_text(angle = 45,hjust = 1, size = 7))
+ggsave("myplot.png", my_plot, width=15, height = 10)
 
 
 
+library(plotly)
+ggplotly(my_plot)
 
 
 
+acad_vis <- ggplot(data = acadia, aes(x = year, y = visitors)) + 
+  geom_point() +
+  geom_line() +
+  geom_smooth(color = "red") +
+  labs(title = "Acadia National Park Visitation",
+       y = "Visitation",
+       x = "Year") +
+  theme_bw()
 
-
-
-
-
-
-
-
+ggplotly(acad_vis)
 
 
 
