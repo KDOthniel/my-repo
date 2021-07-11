@@ -71,33 +71,51 @@ ggplot(data=se)+
 
 
 
+ggplot(data=se)+
+  geom_point(aes(x=year, y=visitors,color=park_name))+
+  facet_wrap(~state, scales = "free")
+
+
+
+ggplot(data=se)+
+  geom_jitter(aes(x=park_name, y=visitors, color=park_name),
+              width = 0.1, alpha=0.4)+
+  coord_flip()+
+  theme(legend.position = "none")
+
+
+
+ggplot(data=se,aes(x=park_name, y=visitors))+
+  geom_boxplot()+
+  theme(axis.text.x = element_text(angle = 45,hjust = 1))+
+  xlab("")
+
+
+
+ggplot(se, aes(x=year, y=visitors, col=park_name))+
+  geom_line()
 
 
 
 
+ggplot(data=acadia)+
+  geom_point(aes(x=year, y=visitors))+
+  geom_line(aes(x=year, y=visitors))+
+  geom_smooth(aes(x=year, y=visitors))+
+  labs(title="Acadia National Park Visitation",
+       y="Visitation",
+       x="Year")+
+  theme_bw()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ggplot(data=acadia, aes(x=year, y=visitors))+
+  geom_point()+
+  geom_line()+
+  geom_smooth(color="red")+
+  labs(title="Acadia National Park Visitation",
+       y="Visitation",
+       x="Year")+
+  theme_bw()
 
 
 
