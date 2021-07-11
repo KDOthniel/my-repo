@@ -40,20 +40,34 @@ ggplot(data=ca)+
   geom_point(aes(x=year, y=visitors))
 
 
+ggplot(data=ca)+
+  geom_point(aes(x=year, y=visitors, color=park_name))
+
+
+ggplot(data=ca)+
+  geom_point(aes(x=year, y=visitors, color=park_name))+
+  labs(x="YEAR", y="VISITATION",
+       title = "California National Park Visitations")+
+  theme_bw()+
+  theme(legend.title = element_blank())
 
 
 
+names(se)
+unique(se$park_name)
+unique(se$state)
 
+ggplot(data=se)+
+  geom_point(aes(x=year, y=visitors, col=park_name))
 
-
-
-
-
-
-
-
-
-
+ggplot(data=se)+
+  geom_point(aes(x=year, y=visitors, col=state))+
+  ggtitle("Southeast region Visitors frequency")+
+  xlab("Years")+
+  ylab("Visitors")+
+  theme_light()+
+  theme(legend.title =element_blank(),
+        axis.text.x = element_text(angle=45, hjust = 1, size = 14))
 
 
 
